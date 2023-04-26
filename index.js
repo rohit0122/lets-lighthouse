@@ -33,7 +33,7 @@ import { wait, padNumber } from './constants.js';
 
                 await !fs.existsSync(`${jsonDirPath}`) && fs.mkdirSync(jsonDirPath, { recursive: true });
                 if (count == 0) {
-                    await fs.writeFileSync(`${csvPath}`, `Page URL, Performance, Accessibility, Best Practices, SEO, Page Name, Test Id`, { flag: 'a+' });
+                    await fs.writeFileSync(`${csvPath}`, `Page URL, Performance, Accessibility, Best Practices, SEO, Project, Page Name, Test Id`, { flag: 'a+' });
                 }
                 const options = {
                     logLevel: 'error',
@@ -54,7 +54,7 @@ import { wait, padNumber } from './constants.js';
                         await fs.writeFileSync(`${jsonFilePath}.json`, reportInfo);
                         console.log(chalk.green('Report done for', runnerResult.lhr.finalDisplayedUrl));
                         //console.log(chalk.green('Performance score was', runnerResult.lhr.categories.performance.score * 100));
-                        fs.writeFileSync(`${csvPath}`, `\n${morePages.path}, ${Object.values(runnerResult.lhr.categories).map(c => `${Math.round(c.score * 100)}`).join(', ')}, ${morePages.name}, ${dateString}-${jsonFilename}`, { flag: 'a+' });
+                        fs.writeFileSync(`${csvPath}`, `\n${morePages.path}, ${Object.values(runnerResult.lhr.categories).map(c => `${Math.round(c.score * 100)}`).join(', ')}, ${element.name}, ${morePages.name}, ${dateString}-${jsonFilename}`, { flag: 'a+' });
                         console.info(`\t${Object.values(runnerResult.lhr.categories).map(c => `${c.title}: ${Math.round(c.score * 100)}`).join(' | ')}\n`);
                         await wait(500);
                     } catch (e) {
