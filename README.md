@@ -10,6 +10,34 @@ Use the package manager [npm](https://nodejs.org/en/download) to install Lets Li
 npm i lets-lighthouse
 ```
 
+
+## Simple setup
+
+To run this project, you will need to add the following configuration structure to config.yaml file
+
+```---
+- name: Dummy
+  items:
+      - name: Google
+        path: https://www.google.com/
+- name: News
+  items:
+      - name: Bhaskar
+        path: https://www.bhaskar.com/
+      - name: BBC News
+        path: https://www.bbc.com/news
+```
+
+
+Now edit package.json and add following scripts to it.
+
+```
+"scripts": {
+    "analysis": "lets-analysis",
+    "compare": "lets-compare"
+  }
+```
+
 ## Usage
 
 ```python
