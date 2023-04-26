@@ -1,6 +1,6 @@
 {
   "name": "lets-lighthouse",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A beautiful tool to generate lighthouse for batch urls & compare them with ease.",
   "main": "index.js",
   "type": "module",
