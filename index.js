@@ -5,7 +5,7 @@ import lighthouse from 'lighthouse';
 import chromeLauncher from 'chrome-launcher';
 import YAML from 'yaml';
 import chalk from 'chalk';
-import { wait , padNumber} from './constants';
+import { wait , padNumber} from './constants.js';
 
 (async () => {
     console.log(chalk.blueBright('Welcome to Lets Lighthouse Tool.'));
