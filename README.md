@@ -41,7 +41,8 @@ Now edit package.json and add following scripts to it.
 ```
 "scripts": {
     "analysis": "lets-analysis",
-    "compare": "lets-compare"
+    "compare": "lets-compare",
+    "compare-csv": "lets-compare-csv"
   }
 ```
 
@@ -71,6 +72,33 @@ in CSV format under tests folder refer screenshot:
 npm run compare /2023-4-25/Dummy/Google/234733.json /2023-4-25/Dummy/Google/234547.json
 
 ```
+
+### Command 3 - Compare 2 lighthouse reports for multiple url.
+
+In order to use this command, you have to follow some steps:
+1. Create *input* folder to the root of the project, for example: 
+<img width="165" alt="image" src="https://user-images.githubusercontent.com/6508575/234642413-50db8a42-f27f-45c5-b6f6-211b67d739c0.png">
+
+2. Now, create *compareit.csv* file under *input* folder like as follows:
+<img width="165" alt="image" src="https://user-images.githubusercontent.com/6508575/234642878-44138bb9-4b9a-4134-8ac3-c5f17988c917.png">
+
+3. Its time to edit the *compareit.csv* file like as follows:
+<img width="577" alt="image" src="https://user-images.githubusercontent.com/6508575/234643104-01d54873-6ef0-4851-be53-a55aab64cdb2.png">
+
+*Note:* Kindly follow the same header names, you can add Test Id's to compare, generated using command 1.
+
+####  Execute below command, this command will use [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/)
+```bash
+
+npm run compare-csv
+```
+
+####  Execute below command if you want to use [Lighthouse Report Diff Tool](https://googlechrome.github.io/lighthouse-ci/difftool/)
+```bash
+
+npm run compare-csv v2
+```
+
 
 ## Contributing
 
