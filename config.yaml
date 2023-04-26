@@ -1,0 +1,11 @@
+---
+- name: Dummy
+  items:
+      - name: Google
+        path: https://www.google.com/
+- name: Content Experience
+  items:
+      - name: Homepage
+        path: https://www.aarp.org/
+      - name: Channel
+        path: https://www.aarp.org/money/

@@ -1,0 +1,43 @@
+{
+  "name": "lets-lighthouse",
+  "version": "1.0.0",
+  "description": "A beautiful tool to generate lighthouse for batch urls & compare them with ease.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "analysis": "./index.js",
+    "compare": "./audit.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohit0122/lets-lighthouse.git"
+  },
+  "keywords": [
+    "lighthouse",
+    "batcher",
+    "comparator",
+    "lighthouse",
+    "batcher",
+    "lighthouse",
+    "comparator",
+    "tools"
+  ],
+  "author": "Rohit Shrivastava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohit0122/lets-lighthouse/issues"
+  },
+  "homepage": "https://github.com/rohit0122/lets-lighthouse#readme",
+  "devDependencies": {
+    "lighthouse": "^10.1.1",
+    "playwright": "^1.32.3",
+    "playwright-lighthouse": "^3.1.0"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "chrome-launcher": "^0.15.2",
+    "fs": "^0.0.1-security",
+    "yaml": "^2.2.2"
+  }
+}
