@@ -1,0 +1,51 @@
+{
+  "name": "lets-lighthouse",
+  "version": "1.0.9",
+  "description": "A beautiful tool to generate lighthouse for batch urls & compare them with ease.",
+  "main": "index.js",
+  "type": "module",
+  "engines" : {
+    "npm" : ">=9.5.1",
+    "node" : ">=19.8.1"
+  },
+  "bin": {
+    "lets-analysis": "./index.js",
+    "lets-compare": "./audit.js",
+    "lets-compare-csv": "./comparator.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lets-analysis": "./index.js",
+    "lets-compare": "./audit.js",
+    "lets-compare-csv": "./comparator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohit0122/lets-lighthouse.git"
+  },
+  "keywords": [
+    "lighthouse",
+    "batcher",
+    "comparator",
+    "tools",
+    "chrome",
+    "devtools",
+    "difftool"
+  ],
+  "author": "Rohit Shrivastava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohit0122/lets-lighthouse/issues"
+  },
+  "homepage": "https://github.com/rohit0122/lets-lighthouse#readme",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "chrome-launcher": "^0.15.2",
+    "convert-csv-to-json": "^2.0.0",
+    "fs": "^0.0.1-security",
+    "lighthouse": "^10.1.1",
+    "prompt-sync": "^4.2.0",
+    "puppeteer": "^19.11.1",
+    "yaml": "^2.2.2"
+  }
+}
