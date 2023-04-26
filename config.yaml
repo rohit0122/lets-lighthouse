@@ -3,9 +3,9 @@
   items:
       - name: Google
         path: https://www.google.com/
-- name: Content Experience
+- name: News
   items:
-      - name: Homepage
-        path: https://www.aarp.org/
-      - name: Channel
-        path: https://www.aarp.org/money/
+      - name: Bhaskar
+        path: https://www.bhaskar.com/
+      - name: BBC News
+        path: https://www.bbc.com/news

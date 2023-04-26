@@ -5,15 +5,10 @@ import lighthouse from 'lighthouse';
 import chromeLauncher from 'chrome-launcher';
 import YAML from 'yaml';
 import chalk from 'chalk';
+import { wait , padNumber} from './constants';
 
-function wait(val) {
-    return new Promise(resolve => setTimeout(resolve, val));
-}
 (async () => {
     console.log(chalk.blueBright('Welcome to Lets Lighthouse Tool.'));
-    const padNumber = number => {
-        return `${number}`.padStart(2, '0');
-    }
 
     const date = new Date();
     const dateString = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -75,22 +70,3 @@ function wait(val) {
 
     }
 })();
-/*
-const chrome = await chromeLauncher.launch();
-const options = {
-    logLevel: 'error',
-    output: 'json',
-    //onlyCategories: ['performance'],
-    port: chrome.port
-};
-const runnerResult = await lighthouse('https://example.com', options);
-
-// `.report` is the HTML report as a string
-const reportHtml = runnerResult.report;
-fs.writeFileSync('lhreport.html', reportHtml);
-
-// `.lhr` is the Lighthouse Result as a JS object
-console.log('Report is done for', runnerResult.lhr.finalDisplayedUrl);
-console.log('Performance score was', runnerResult.lhr.categories.performance.score * 100);
-
-await chrome.kill();*/
