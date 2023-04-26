@@ -14,6 +14,7 @@ npm i lets-lighthouse
 ## Simple setup
 
 To run this project, you will need to add the following configuration structure to config.yaml file
+Create config.yaml file in parallel to your project package.json file.
 
 ```---
 - name: Dummy
@@ -40,11 +41,21 @@ Now edit package.json and add following scripts to it.
 
 ## Usage
 
-```python
+### Command 1
+
+```bash
 # Execute the below command to start lighthouse analysis on multiple URLs
 npm run analysis
+```
+The above command will create the tests folder under your project root with all the analysis info like as follows:
 
-# Compare 2 JSON files generated from the lighthouse.
+<img width="234" alt="image" src="https://user-images.githubusercontent.com/6508575/234552270-8b7a93f1-419c-47e6-83b6-9f9ac4c28971.png">
+
+
+### Command 2
+
+```bash
+# Compare 2 JSON files generated from the lighthouse. Refer the json path from above screenshot.
 npm run compare /2023-4-25/Dummy/Google/234733.json /2023-4-25/Dummy/Google/234547.json
 
 ```
