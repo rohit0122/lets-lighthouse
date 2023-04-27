@@ -1,6 +1,6 @@
 # Lets Lighthouse
 
-A beautiful tool to generate lighthouse for batch urls & compare them with ease.
+A beautiful tool to generate lighthouse reports for batch urls & compare them with ease.
 
 ## Installation
 
@@ -10,7 +10,7 @@ Use the package manager [npm](https://nodejs.org/en/download) to install Lets Li
 npm i lets-lighthouse
 ```
 
-## Simple setup 
+## Simple setup
 
 ### Below command will generate the project required folders and furnished them with dummy data.
 
@@ -62,7 +62,7 @@ Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#synt
 # Execute the below command to start lighthouse analysis on
 # multiple URLs(uses config.yaml)
 
-npm run analysis
+  npm run analysis
 ```
 The above command will create the tests folder under your project root
 with all the analysis info like as follows, you will also get consolidated report
@@ -77,7 +77,7 @@ in CSV format under tests folder refer screenshot:
 # Compare 2 JSON files generated from the lighthouse.
 # Refer the json path from above screenshot.
 
-npm run compare /2023-4-25/Dummy/Google/234733.json /2023-4-25/Dummy/Google/234547.json
+  npm run compare /2023-4-27/Dummy/Google/105453.json /2023-4-27/Dummy/Google/105658.json
 
 ```
 
@@ -98,13 +98,13 @@ In order to use this command, you have to follow some steps:
 ####  Execute below command, this command will use [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/)
 ```bash
 
-npm run compare-csv
+  npm run compare-csv
 ```
 
 ####  Execute below command if you want to use [Lighthouse Report Diff Tool](https://googlechrome.github.io/lighthouse-ci/difftool/)
 ```bash
 
-npm run compare-csv v2
+  npm run compare-csv v2
 ```
 
 
