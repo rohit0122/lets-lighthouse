@@ -1,6 +1,6 @@
 {
   "name": "lets-lighthouse",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A beautiful tool to generate lighthouse for batch urls & compare them with ease.",
   "main": "index.js",
   "type": "module",
@@ -11,13 +11,15 @@
   "bin": {
     "lets-analysis": "./index.js",
     "lets-compare": "./audit.js",
-    "lets-compare-csv": "./comparator.js"
+    "lets-compare-csv": "./comparator.js",
+    "lets-init": "./init.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lets-analysis": "./index.js",
     "lets-compare": "./audit.js",
-    "lets-compare-csv": "./comparator.js"
+    "lets-compare-csv": "./comparator.js",
+    "lets-init": "./init.js"
   },
   "repository": {
     "type": "git",
