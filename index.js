@@ -8,7 +8,7 @@ import chalk from 'chalk';
 import { wait, padNumber } from './constants.js';
 
 (async () => {
-    console.log(chalk.blueBright('Welcome to Lets Lighthouse Tool.'));
+    console.log(chalk.blueBright('Welcome to Lets Lighthouse Analysis Tool.'));
 
     const date = new Date();
     const dateString = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;

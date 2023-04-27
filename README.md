@@ -10,14 +10,32 @@ Use the package manager [npm](https://nodejs.org/en/download) to install Lets Li
 npm i lets-lighthouse
 ```
 
-## Simple setup
+## Simple setup 
 
-To run this project, you will need to add the following configuration structure to config.yaml file
-Create config.yaml file in parallel to your project's package.json file.
+### Below command will generate the project required folders and furnished them with dummy data.
 
-***Note: _Whitespace indentation is used to indicate nesting and overall structure._***
+```bash
+  npm run init
+```
+
+### Now edit package.json and add following scripts to it.
+
+```
+"scripts": {
+    "analysis": "lets-analysis",
+    "compare": "lets-compare",
+    "compare-csv": "lets-compare-csv",
+    "init": "lets-init"
+  }
+```
+
+## Heart of the project
+
+To use this tool, you will need to edit the following configuration structure in config.yaml file
+Create config.yaml file *(if not exits)* in parallel to your project's package.json file.
+
+***Note: _In YAML file, Whitespace indentation is used to indicate nesting and overall structure._***
 Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#syntax)
-
 
 ```
 ---
@@ -35,16 +53,6 @@ Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#synt
         path: https://www.bbc.com/news
 ```
 
-
-Now edit package.json and add following scripts to it.
-
-```
-"scripts": {
-    "analysis": "lets-analysis",
-    "compare": "lets-compare",
-    "compare-csv": "lets-compare-csv"
-  }
-```
 
 ## Usage
 
