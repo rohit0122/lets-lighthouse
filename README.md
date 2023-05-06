@@ -1,7 +1,18 @@
 # Lets Lighthouse
 
-A beautiful tool to generate lighthouse reports for batch urls & compare them with ease.
+Verify your page performance and improve it before it's too late.
 
+Ease of analysis, reporting & comparison is powered by the "Let's Lighthouse" tool and backed by "Lighthouse" i.e. a proven tool to validate your page performance.
+
+This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.
+
+# Required Node & NPM version 
+```bash
+node >= 19.8.1
+
+npm  >=9.5.1
+
+```
 ## Installation
 
 Use the package manager [npm](https://nodejs.org/en/download) to install Lets Lighthouse.
@@ -12,21 +23,21 @@ npm i lets-lighthouse
 
 ## Simple setup
 
-### Below command will generate the project required folders and furnished them with dummy data.
-
-```bash
-  npm run init
-```
-
 ### Now edit package.json and add following scripts to it.
 
 ```
 "scripts": {
+   "init": "lets-init",
     "analysis": "lets-analysis",
     "compare": "lets-compare",
-    "compare-csv": "lets-compare-csv",
-    "init": "lets-init"
+    "compare-csv": "lets-compare-csv"
   }
+```
+
+### Below command will generate the project required folders and furnished them with dummy data.
+
+```bash
+  npm run init
 ```
 
 ## Heart of the project
