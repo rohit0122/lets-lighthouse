@@ -1,7 +1,18 @@
 # Lets Lighthouse
 
-A beautiful tool to generate lighthouse for batch urls & compare them with ease.
+Verify your page performance and improve it before it's too late.
 
+Ease of analysis, reporting & comparison is powered by the "Let's Lighthouse" tool and backed by "Lighthouse" i.e. a proven tool to validate your page performance.
+
+This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.
+
+## Required Node & NPM version 
+```bash
+node >= 19.8.1
+
+npm  >=9.5.1
+
+```
 ## Installation
 
 Use the package manager [npm](https://nodejs.org/en/download) to install Lets Lighthouse.
@@ -10,23 +21,23 @@ Use the package manager [npm](https://nodejs.org/en/download) to install Lets Li
 npm i lets-lighthouse
 ```
 
-## Simple setup 
-
-### Below command will generate the project required folders and furnished them with dummy data.
-
-```bash
-  npm run init
-```
+## Simple setup
 
 ### Now edit package.json and add following scripts to it.
 
 ```
 "scripts": {
+   "init": "lets-init",
     "analysis": "lets-analysis",
     "compare": "lets-compare",
-    "compare-csv": "lets-compare-csv",
-    "init": "lets-init"
+    "compare-csv": "lets-compare-csv"
   }
+```
+
+### Below command will generate the project required folders and furnished them with dummy data.
+
+```bash
+  npm run init
 ```
 
 ## Heart of the project
@@ -62,7 +73,7 @@ Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#synt
 # Execute the below command to start lighthouse analysis on
 # multiple URLs(uses config.yaml)
 
-npm run analysis
+  npm run analysis
 ```
 The above command will create the tests folder under your project root
 with all the analysis info like as follows, you will also get consolidated report
@@ -77,7 +88,7 @@ in CSV format under tests folder refer screenshot:
 # Compare 2 JSON files generated from the lighthouse.
 # Refer the json path from above screenshot.
 
-npm run compare /2023-4-25/Dummy/Google/234733.json /2023-4-25/Dummy/Google/234547.json
+  npm run compare /2023-4-27/Dummy/Google/105453.json /2023-4-27/Dummy/Google/105658.json
 
 ```
 
@@ -98,13 +109,13 @@ In order to use this command, you have to follow some steps:
 ####  Execute below command, this command will use [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/)
 ```bash
 
-npm run compare-csv
+  npm run compare-csv
 ```
 
 ####  Execute below command if you want to use [Lighthouse Report Diff Tool](https://googlechrome.github.io/lighthouse-ci/difftool/)
 ```bash
 
-npm run compare-csv v2
+  npm run compare-csv v2
 ```
 
 
