@@ -6,7 +6,7 @@ Ease of analysis, reporting & comparison is powered by the "Let's Lighthouse" to
 
 This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.
 
-# Required Node & NPM version 
+## Required Node & NPM version 
 ```bash
 node >= 19.8.1
 
