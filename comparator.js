@@ -29,7 +29,7 @@ import chalk from "chalk";
             )}.json`;
             const newReportJsonFile = `${PATH_TO_TEST_FOLDER}/${compareWithTestId.substr(
                 0,
-                lastTestId.lastIndexOf("-")
+                compareWithTestId.lastIndexOf("-")
             )}/${pageFolderPath}/${compareWithTestId.substr(
                 compareWithTestId.lastIndexOf("-") + 1
             )}.json`;
