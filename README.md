@@ -6,6 +6,15 @@ Ease of analysis, reporting & comparison is powered by the "Let's Lighthouse" to
 
 This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.
 
+
+## Note! 👋
+⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
+
+The large size of the unpacked file for this project is a result of the presence of sample lighthouse JSON files located within the dist folder.
+
+⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
+
+
 ## Required Node & NPM version 
 ```bash
 node >= 19.8.1
