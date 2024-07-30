@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { readFileSync } from 'fs';
 import puppeteer from "puppeteer";
 import promptSync from "prompt-sync";
 
@@ -77,8 +77,8 @@ export const openLighthouseViewer = async (filePath, chromeArgs = []) => {
 };
 
 export const opener = async (args, argv) => {
-    let oldContent = JSON.parse(fs.readFileSync(args.previous));
-    let newContent = JSON.parse(fs.readFileSync(args.current));
+    let oldContent = JSON.parse(readFileSync(args.previous));
+    let newContent = JSON.parse(readFileSync(args.current));
 
     if (oldContent.requestedUrl !== newContent.requestedUrl) {
         // throw new Error('Reports are not against the same request url');
@@ -130,3 +130,15 @@ export const opener = async (args, argv) => {
         console.log('Error while closing browser: ', e.message)
     }
 };
+
+export const getSanitizedDomain = (domainUrl) => {
+    let result;
+    let match;
+    if (match = domainUrl.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n\?\=]+)/im)) {
+        result = match[1]
+        if (match = result.match(/^[^\.]+\.(.+\..+)$/)) {
+            result = match[1]
+        }
+    }
+    return result.substr(0, result.indexOf('.'));
+}

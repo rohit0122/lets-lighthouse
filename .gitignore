@@ -7,4 +7,6 @@ npm-debug.log
 .tmp_env
 .tgz
 /tests
-/input
+/crawler
+/tests
+/storage

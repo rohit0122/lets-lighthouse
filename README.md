@@ -17,9 +17,9 @@ The large size of the unpacked file for this project is a result of the presence
 
 ## Required Node & NPM version 
 ```bash
-node >= 19.8.1
+node >= 20.5.1
 
-npm  >=9.5.1
+npm  >=9.8.0
 
 ```
 ## Installation
