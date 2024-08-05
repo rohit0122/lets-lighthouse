@@ -1,7 +1,7 @@
 {
-  "name": "lets-lighthouse",
-  "version": "2.0.0",
-  "description": "This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.",
+  "name": "lets-lighthouse2.0",
+  "version": "1.0.0",
+  "description": "This tool helps you to generate lighthouse reports for provided sitemap URL & compare them effortlessly.",
   "main": "index.js",
   "type": "module",
   "engines": {
@@ -9,19 +9,19 @@
     "node": ">=20.5.1"
   },
   "bin": {
-    "lets-crawl": "./crawler.js",
-    "lets-analysis": "./index.js",
-    "lets-compare": "./audit.js",
-    "lets-compare-csv": "./comparator.js",
-    "lets-init": "./init.js"
+    "crawler": "./crawler.js",
+    "analysis": "./index.js",
+    "compare": "./audit.js",
+    "compare-csv": "./comparator.js",
+    "init": "./init.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lets-crawl": "./crawler.js",
-    "lets-analysis": "./index.js",
-    "lets-compare": "./audit.js",
-    "lets-compare-csv": "./comparator.js",
-    "lets-init": "./init.js"
+    "crawler": "./crawler.js",
+    "analysis": "./index.js",
+    "compare": "./audit.js",
+    "compare-csv": "./comparator.js",
+    "init": "./init.js"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,10 @@
     "tools",
     "chrome",
     "devtools",
-    "difftool"
+    "difftool",
+    "crawler",
+    "crawl",
+    "sitemap"
   ],
   "author": "Rohit Shrivastava",
   "license": "ISC",

@@ -1,10 +1,10 @@
-# Lets Lighthouse
+# Lets Lighthouse 2.0
 
 Verify your page performance and improve it before it's too late.
 
 Ease of analysis, reporting & comparison is powered by the "Let's Lighthouse" tool and backed by "Lighthouse" i.e. a proven tool to validate your page performance.
 
-This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.
+This tool helps you to generate lighthouse reports for provided sitemap URL & compare them effortlessly.
 
 
 ## Note! 👋
@@ -15,7 +15,7 @@ The large size of the unpacked file for this project is a result of the presence
 ⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
 
 
-## Required Node & NPM version 
+## Required Node & NPM version
 ```bash
 node >= 20.5.1
 
@@ -27,21 +27,10 @@ npm  >=9.8.0
 Use the package manager [npm](https://nodejs.org/en/download) to install Lets Lighthouse.
 
 ```bash
-npm i lets-lighthouse
+npm i lets-lighthouse2.0
 ```
 
 ## Simple setup
-
-### Now edit package.json and add following scripts to it.
-
-```
-"scripts": {
-   "init": "lets-init",
-    "analysis": "lets-analysis",
-    "compare": "lets-compare",
-    "compare-csv": "lets-compare-csv"
-  }
-```
 
 ### Below command will generate the project required folders and furnished them with dummy data.
 
@@ -49,40 +38,30 @@ npm i lets-lighthouse
   npm run init
 ```
 
-## Heart of the project
-
-To use this tool, you will need to edit the following configuration structure in config.yaml file
-Create config.yaml file *(if not exits)* in parallel to your project's package.json file.
-
-***Note: _In YAML file, Whitespace indentation is used to indicate nesting and overall structure._***
-Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#syntax)
-
-```
----
-- name: Dummy
-  items:
-      - name: Google
-        path: https://www.google.com/
-- name: News
-  items:
-      - name: Times of India
-        path: https://timesofindia.indiatimes.com/
-      - name: Bhaskar
-        path: https://www.bhaskar.com/
-      - name: BBC News
-        path: https://www.bbc.com/news
-```
-
-
 ## Usage
+
+To use this tool, you will need to crawl a website page by giving actual sitemap URL path to the following command.
+The command below retrieves the URLs and creates a file named *lighthouse.csv* in the *crawler* directory.
+
 
 ### Command 1
 
+### Command 1.1 (Fetch all the URLs listed under sitemap.xml)
+```bash
+npm run crawler https://www.google.com/docs/sitemaps.xml
+```
+
+### Command 1.2 (Fetch only few URLs listed under sitemap.xml)
+```bash
+npm run crawler https://www.google.com/docs/sitemaps.xml 10
+```
+
+### Command 2
 ```bash
 # Execute the below command to start lighthouse analysis on
-# multiple URLs(uses config.yaml)
+# multiple URLs(uses */crawler/lighthouse.csv*)
 
-  npm run analysis
+npm run analysis
 ```
 The above command will create the tests folder under your project root
 with all the analysis info like as follows, you will also get consolidated report
@@ -91,7 +70,7 @@ in CSV format under tests folder refer screenshot:
 <img width="234" alt="image" src="https://user-images.githubusercontent.com/6508575/234552270-8b7a93f1-419c-47e6-83b6-9f9ac4c28971.png">
 
 
-### Command 2
+### Command 3
 
 ```bash
 # Compare 2 JSON files generated from the lighthouse.
@@ -101,7 +80,7 @@ in CSV format under tests folder refer screenshot:
 
 ```
 
-### Command 3 - Compare 2 lighthouse reports for multiple url.
+### Command 4 - Compare 2 lighthouse reports for multiple URL.
 
 In order to use this command, you have to follow some steps:
 1. Create *input* folder to the root of the project, for example: 

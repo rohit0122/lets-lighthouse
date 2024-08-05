@@ -4,13 +4,20 @@ import { CheerioCrawler, Configuration, Sitemap, Dataset } from 'crawlee';
 import { cpSync, existsSync, mkdirSync, rmdirSync, rmSync, writeFileSync } from 'fs';
 import slug from 'slug';
 import { getSanitizedDomain } from './constants.js';
+import chalk from 'chalk';
+
 
 var args = process.argv.slice(2);
 var siteMapUrl = 'https://crawlee.dev/sitemap.xml';
+var maxUrlsToFetch = 0;
 if (args.length) {
     siteMapUrl = args[0];
 }
-console.log('Sitemap URL to Execute:::::::::::', siteMapUrl);
+if (args.length && args[1]) {
+    maxUrlsToFetch = parseInt(args[1]);
+}
+console.log(chalk.greenBright('Crawler started to read sitemap URL.'));
+console.log(chalk.blueBright('Sitemap URL to Execute:::::::::::', siteMapUrl));
 
 const outputDir = `${process.cwd()}/crawler/`;
 const testResultsFilePath = `${outputDir}lighthouse.csv`;
@@ -42,11 +49,11 @@ const crawler = new CheerioCrawler({
     requestHandlerTimeoutSecs: 30,
 
     // Limit to 10 requests per one crawl
-    maxRequestsPerCrawl: 2,
+    maxRequestsPerCrawl: maxUrlsToFetch,
 
     // This function will be called for each URL to crawl.
     async requestHandler({ request, $ }) {
-        console.log(`Processing the URL ${request.url}...`);
+        console.log(chalk.greenBright(`Processing the URL ${request.url}...`));
 
         // Extract data from the page using cheerio.
         const title = $('title').text().trim();
@@ -57,15 +64,17 @@ const crawler = new CheerioCrawler({
 
     // This function is called if the page processing failed more than maxRequestRetries + 1 times.
     failedRequestHandler({ request }) {
-        console.log(`Request ${request.url} failed twice.`);
+        console.log(chalk.redBright(`Request ${request.url} failed twice.`));
     },
     errorHandler({ request, error }) {
-        console.log(`Exception ${request.url} failed with error ${error}.`);
+        console.log(chalk.redBright(`Exception ${request.url} failed with error ${error}.`));
     }
 });
 
 const { urls } = await Sitemap.load(siteMapUrl);
 // Run the crawler and wait for it to finish.
 await crawler.run(urls);
+console.log(chalk.blueBright('Generating CSV.'));
 cpSync(storageFilePath, testResultsFilePath);
-console.log('Crawler finished.');
+console.log(chalk.blueBright('CSV file generate at location: ', testResultsFilePath));
+console.log(chalk.green('Crawler finished execution.'));
