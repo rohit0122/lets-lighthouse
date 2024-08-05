@@ -1,6 +1,6 @@
 {
   "name": "lets-lighthouse2.0",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This tool helps you to generate lighthouse reports for provided sitemap URL & compare them effortlessly.",
   "main": "index.js",
   "type": "module",
