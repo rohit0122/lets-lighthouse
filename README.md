@@ -32,7 +32,7 @@ npm i lets-lighthouse
 
 ## Simple setup
 
-### Now edit package.json and add following scripts to it.
+### Now edit package.json and add the following scripts to it.
 
 ```
 "scripts": {
@@ -43,7 +43,7 @@ npm i lets-lighthouse
   }
 ```
 
-### Below command will generate the project required folders and furnished them with dummy data.
+### Below command will generate the project-required folders and furnish them with dummy data.
 
 ```bash
   npm run init
@@ -54,7 +54,7 @@ npm i lets-lighthouse
 To use this tool, you will need to edit the following configuration structure in config.yaml file
 Create config.yaml file *(if not exits)* in parallel to your project's package.json file.
 
-***Note: _In YAML file, Whitespace indentation is used to indicate nesting and overall structure._***
+***Note: _In the YAML file, Whitespace indentation is used to indicate nesting and overall structure._***
 Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#syntax)
 
 ```
@@ -85,8 +85,8 @@ Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#synt
   npm run analysis
 ```
 The above command will create the tests folder under your project root
-with all the analysis info like as follows, you will also get consolidated report
-in CSV format under tests folder refer screenshot:
+with all the analysis info as follows, you will also get a consolidated report
+in CSV format under the tests folder refer to screenshot:
 
 <img width="234" alt="image" src="https://user-images.githubusercontent.com/6508575/234552270-8b7a93f1-419c-47e6-83b6-9f9ac4c28971.png">
 
@@ -95,33 +95,33 @@ in CSV format under tests folder refer screenshot:
 
 ```bash
 # Compare 2 JSON files generated from the lighthouse.
-# Refer the json path from above screenshot.
+# Refer to the JSON path from the above screenshot.
 
   npm run compare /2023-4-27/Dummy/Google/105453.json /2023-4-27/Dummy/Google/105658.json
 
 ```
 
-### Command 3 - Compare 2 lighthouse reports for multiple url.
+### Command 3 - Compare 2 lighthouse reports for multiple URLs.
 
 In order to use this command, you have to follow some steps:
-1. Create *input* folder to the root of the project, for example: 
+1. Create an *input* folder to the root of the project, for example: 
 <img width="165" alt="image" src="https://user-images.githubusercontent.com/6508575/234642413-50db8a42-f27f-45c5-b6f6-211b67d739c0.png">
 
 2. Now, create *compareit.csv* file under *input* folder like as follows:
 <img width="165" alt="image" src="https://user-images.githubusercontent.com/6508575/234642878-44138bb9-4b9a-4134-8ac3-c5f17988c917.png">
 
-3. Its time to edit the *compareit.csv* file like as follows:
+3. It is time to edit the *compareit.csv* file as follows:
 <img width="577" alt="image" src="https://user-images.githubusercontent.com/6508575/234643104-01d54873-6ef0-4851-be53-a55aab64cdb2.png">
 
-*Note:* Kindly follow the same header names, you can add Test Id's to compare, generated using command 1.
+*Note:* Kindly follow the same header names, you can add Test IDs to compare, generated using command 1.
 
-####  Execute below command, this command will use [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/)
+####  Execute the below command, this command will use [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/)
 ```bash
 
   npm run compare-csv
 ```
 
-####  Execute below command if you want to use [Lighthouse Report Diff Tool](https://googlechrome.github.io/lighthouse-ci/difftool/)
+####  Execute the below command if you want to use [Lighthouse Report Diff Tool](https://googlechrome.github.io/lighthouse-ci/difftool/)
 ```bash
 
   npm run compare-csv v2
