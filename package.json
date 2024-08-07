@@ -1,7 +1,7 @@
 {
   "name": "lets-lighthouse",
-  "version": "1.1.7",
-  "description": "This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.",
+  "version": "1.1.8",
+  "description": "This tool enables the generation of lighthouse reports for multiple URLs, both for desktop and mobile, utilizing config.yaml, and allows for easy comparison of the results.",
   "main": "index.js",
   "type": "module",
   "engines" : {
@@ -9,17 +9,17 @@
     "node" : ">=19.8.1"
   },
   "bin": {
-    "lets-analysis": "./index.js",
-    "lets-compare": "./audit.js",
-    "lets-compare-csv": "./comparator.js",
-    "lets-init": "./init.js"
+    "analysis": "./index.js",
+    "compare": "./audit.js",
+    "compare-csv": "./comparator.js",
+    "init": "./init.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lets-analysis": "./index.js",
-    "lets-compare": "./audit.js",
-    "lets-compare-csv": "./comparator.js",
-    "lets-init": "./init.js"
+    "analysis": "./index.js",
+    "compare": "./audit.js",
+    "compare-csv": "./comparator.js",
+    "init": "./init.js"
   },
   "repository": {
     "type": "git",
@@ -41,13 +41,12 @@
   },
   "homepage": "https://github.com/rohit0122/lets-lighthouse#readme",
   "dependencies": {
-    "chalk": "^5.2.0",
-    "chrome-launcher": "^0.15.2",
+    "chalk": "^5.3.0",
+    "chrome-launcher": "^1.1.2",
     "convert-csv-to-json": "^2.0.0",
-    "fs": "^0.0.1-security",
-    "lighthouse": "^10.1.1",
+    "lighthouse": "^12.1.0",
     "prompt-sync": "^4.2.0",
-    "puppeteer": "^19.11.1",
-    "yaml": "^2.2.2"
+    "puppeteer": "^22.14.0",
+    "yaml": "^2.5.0"
   }
 }

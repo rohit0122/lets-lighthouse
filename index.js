@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
-import lighthouse from 'lighthouse';
-import chromeLauncher from 'chrome-launcher';
+import lighthouse, { desktopConfig }  from 'lighthouse';
+import * as chromeLauncher from 'chrome-launcher';
 import YAML from 'yaml';
 import chalk from 'chalk';
 import { wait, padNumber } from './constants.js';
@@ -23,17 +23,17 @@ import { wait, padNumber } from './constants.js';
         /*{ chromeFlags: ['--headless'] }*/
         let count = 0;
         for (const element of configData) {
-            for (const morePages of element.items) {
+            for (const item of element.items) {
                 // Ensure output path exists
-                const jsonDirPath = `${outputDirPath}/${element.name}/${morePages.name}`;
+                const jsonDirPath = `${outputDirPath}/${element.name}/${item.name}`;
                 const jsonFilePath = `${jsonDirPath}/${jsonFilename}`;
-                //console.log('jsonDirPathjsonDirPathjsonDirPath', outputDirPath, element.name, morePages.name, ' =======', jsonDirPath);
-                console.log(chalk.redBright(`Currently Running for: ${element.name} => ${morePages.name}`));
+                //console.log('jsonDirPathjsonDirPathjsonDirPath', outputDirPath, element.name, item.name, ' =======', jsonDirPath);
+                console.log(chalk.redBright(`Currently Running for: ${element.name} => ${item.name}`));
 
 
-                await !fs.existsSync(`${jsonDirPath}`) && fs.mkdirSync(jsonDirPath, { recursive: true });
+                !fs.existsSync(`${jsonDirPath}`) && fs.mkdirSync(jsonDirPath, { recursive: true });
                 if (count == 0) {
-                    await fs.writeFileSync(`${csvPath}`, `Page URL, Performance, Accessibility, Best Practices, SEO, Project, Page Name, Test Id`, { flag: 'a+' });
+                    fs.writeFileSync(`${csvPath}`, `Page URL, Performance, Accessibility, Best Practices, SEO, Project, Page Name, Test Id`, { flag: 'a+' });
                 }
                 const options = {
                     logLevel: 'error',
@@ -44,17 +44,14 @@ import { wait, padNumber } from './constants.js';
                 const chrome = await chromeLauncher.launch().then(async chrome => {
                     options.port = chrome.port;
                     try {
-                        const runnerResult = await lighthouse(morePages.path, options, {
-                            extends: 'lighthouse:default',
-
-                        });
-                        const reportInfo = await runnerResult.report;
+                        const runnerResult = await lighthouse(item.path, options, item.device === 'desktop' && desktopConfig);
+                        const reportInfo = runnerResult.report;
                         //fs.writeFileSync('lhreport.html', reportInfo);
                         // Write output json
-                        await fs.writeFileSync(`${jsonFilePath}.json`, reportInfo);
+                        fs.writeFileSync(`${jsonFilePath}.json`, reportInfo);
                         console.log(chalk.green('Report done for', runnerResult.lhr.finalDisplayedUrl));
                         //console.log(chalk.green('Performance score was', runnerResult.lhr.categories.performance.score * 100));
-                        fs.writeFileSync(`${csvPath}`, `\n${morePages.path}, ${Object.values(runnerResult.lhr.categories).map(c => `${Math.round(c.score * 100)}`).join(', ')}, ${element.name}, ${morePages.name}, ${dateString}-${jsonFilename}`, { flag: 'a+' });
+                        fs.writeFileSync(`${csvPath}`, `\n${item.path}, ${Object.values(runnerResult.lhr.categories).map(c => `${Math.round(c.score * 100)}`).join(', ')}, ${element.name}, ${item.name}, ${dateString}-${jsonFilename}`, { flag: 'a+' });
                         console.info(`\t${Object.values(runnerResult.lhr.categories).map(c => `${c.title}: ${Math.round(c.score * 100)}`).join(' | ')}\n`);
                         await wait(500);
                     } catch (e) {

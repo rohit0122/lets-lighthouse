@@ -1,11 +1,10 @@
 # Lets Lighthouse
 
-Verify your page performance and improve it before it's too late.
+Evaluate the performance of your webpage and enhance it before it's too late.
 
-Ease of analysis, reporting & comparison is powered by the "Let's Lighthouse" tool and backed by "Lighthouse" i.e. a proven tool to validate your page performance.
+The "Let's Lighthouse" tool facilitates straightforward analysis, reporting, and comparison, supported by "Lighthouse," a reliable tool for assessing your page's performance.
 
-This tool helps you to generate lighthouse reports for batch URLs & compare them effortlessly.
-
+This tool enables the generation of lighthouse reports for multiple URLs, both for desktop and mobile, utilizing *config.yaml*, and allows for easy comparison of the results.
 
 ## Note! 👋
 ⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
@@ -32,18 +31,7 @@ npm i lets-lighthouse
 
 ## Simple setup
 
-### Now edit package.json and add the following scripts to it.
-
-```
-"scripts": {
-   "init": "lets-init",
-    "analysis": "lets-analysis",
-    "compare": "lets-compare",
-    "compare-csv": "lets-compare-csv"
-  }
-```
-
-### Below command will generate the project-required folders and furnish them with dummy data.
+### The following command will create the necessary project folders and populate them with placeholder data.
 
 ```bash
   npm run init
@@ -57,18 +45,24 @@ Create config.yaml file *(if not exits)* in parallel to your project's package.j
 ***Note: _In the YAML file, Whitespace indentation is used to indicate nesting and overall structure._***
 Here is the read about [YAML](https://docs.fileformat.com/programming/yaml/#syntax)
 
+*Please be advised to refrain from using special characters in page names.*
+
 ```
 ---
 - name: Dummy
   items:
       - name: Google
         path: https://www.google.com/
+      - name: Google - Desktop
+        path: https://www.google.com/
+        device: desktop
 - name: News
   items:
       - name: Times of India
         path: https://timesofindia.indiatimes.com/
       - name: Bhaskar
         path: https://www.bhaskar.com/
+        device: desktop
       - name: BBC News
         path: https://www.bbc.com/news
 ```

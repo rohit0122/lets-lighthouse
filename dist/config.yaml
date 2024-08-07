@@ -3,11 +3,14 @@
   items:
       - name: Google
         path: https://www.google.com/
+      - name: Google - Desktop
+        path: https://www.google.com/
 - name: News
   items:
       - name: Times of India
         path: https://timesofindia.indiatimes.com/
       - name: Bhaskar
         path: https://www.bhaskar.com/
+        device: desktop
       - name: BBC News
         path: https://www.bbc.com/news
